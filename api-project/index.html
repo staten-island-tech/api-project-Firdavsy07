@@ -7,25 +7,27 @@
     <title>Dnd Documentation</title>
   </head>
   <body>
-    <script type="module" src="./js/main.js"></script>
-    <h1>Find Your Spell</h1>
+    <div class="background--custom">
+      <script type="module" src="./js/main.js"></script>
+      <h1>Find Your Spell</h1>
 
-    <h3>
-      <label for="name"
-        >Are you a massive nerd and looking for spells by name?
-      </label>
-    </h3>
+      <h3>
+        <label for="name"
+          >Are you a massive nerd and looking for spells by name?
+        </label>
+      </h3>
 
-    <input
-      type="text"
-      name="inputBox"
-      class="spell-name"
-      placeholder="Enter A Spell, Ex: fire-bolt"
-      required
-    />
-    <input type="submit" id="submit" />
-    <div>
-      <span id="api-response"></span>
+      <input
+        type="text"
+        name="inputBox"
+        class="spell-name"
+        placeholder="Enter A Spell, Ex: fire-bolt"
+        required
+      />
+      <input type="submit" id="submit" />
+      <div>
+        <span id="api-response"></span>
+      </div>
     </div>
   </body>
 </html>
