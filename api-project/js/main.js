@@ -18,3 +18,12 @@ async function fetchSpellData(URL) {
   }
 }
 fetchSpellData(URL);
+
+const DOMselectors = {
+  spellName: document.querySelector(".spell-name"),
+  button: document.getElementById("submit"),
+};
+
+DOMselectors.button.addEventListener("click", function () {
+  console.log(DOMselectors.spellName.value);
+});
