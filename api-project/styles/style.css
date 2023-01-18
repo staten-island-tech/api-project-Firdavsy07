@@ -1,6 +1,23 @@
 html, body {
-    font-size: 62.5%;   
-   }
+    font-size: 62.5%; 
+    background: linear-gradient(90deg, #072986, #FF0A0A, #000000);
+    background-size: 300% 300%;
+    animation: gradient 7s alternate infinite;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+  @keyframes gradient {
+    0% {
+      background-position: 0%;
+    }
+    100% {
+      background-position: 100%;
+    }
+  }  
+   
    :root{
     /*Font size*/
     --h1:3.815rem;
@@ -25,21 +42,4 @@ html, body {
     h5{
         font-size: var(--h5);
     }
-    .background--custom {
-        background: linear-gradient(90deg, #072986, #FF0A0A, #000000);
-        background-size: 300% 300%;
-        animation: gradient 7s alternate infinite;
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-      }
-      @keyframes gradient {
-        0% {
-          background-position: 0%;
-        }
-        100% {
-          background-position: 100%;
-        }
-      }
+  

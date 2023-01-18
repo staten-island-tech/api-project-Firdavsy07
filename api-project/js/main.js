@@ -9,6 +9,8 @@ async function fetchSpellData(URL) {
     } else {
       const data = await response.json();
       console.log(data);
+      const array = Object.entries(data);
+      console.log(array);
       console.log("common whalen W");
       data.index;
     }
