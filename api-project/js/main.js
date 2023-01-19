@@ -13,6 +13,16 @@ async function fetchSpellData(URL) {
       console.log(array);
       console.log("common whalen W");
       data.index;
+      data.entry.array.forEach((data) => {
+        data.entry.forEach((spell) => {
+          document
+            .getElementById("api-response")
+            .insertAdjacentHTML(
+              "afterbegin",
+              `<div class="card"> <h2> ${spell.index}</h2></div>`
+            );
+        });
+      });
     }
   } catch (error) {
     console.log(error);
