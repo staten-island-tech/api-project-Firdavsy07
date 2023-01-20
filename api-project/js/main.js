@@ -13,8 +13,8 @@ async function fetchSpellData(URL) {
       console.log(array);
       console.log("common whalen W");
       data.index;
-      data.entry.array.forEach((data) => {
-        data.entry.forEach((spell) => {
+      array.forEach((array) => {
+        array.forEach((spell) => {
           document
             .getElementById("api-response")
             .insertAdjacentHTML(
