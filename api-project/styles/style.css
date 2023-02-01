@@ -1,4 +1,5 @@
 html, body {
+  color: white;
     font-size: 62.5%; 
     background: linear-gradient(90deg, #072986, #FF0A0A, #000000);
     background-size: 300% 300%;
@@ -43,3 +44,7 @@ html, body {
         font-size: var(--h5);
     }
   
+
+    input{
+      width: 50rem;
+    }
