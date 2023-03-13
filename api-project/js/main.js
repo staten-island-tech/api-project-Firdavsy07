@@ -27,13 +27,16 @@ async function fetchSpellData(URL) {
       });
     }
   } catch (error) {
-    console.log(error);
-    console.log("common whalen L");
     document.getElementById("api-response").insertAdjacentHTML(
       "afterbegin",
       `<div>
         <h2>Sorry, I hate to inform you that your spell request was stupid</h2>
         </div>`
     );
+    console.log(error);
   }
 }
+fetchSpellData();
+DOMselectors.button.addEventListener("click", function () {
+  fetchSpellData();
+});
