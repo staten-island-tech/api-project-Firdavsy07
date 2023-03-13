@@ -26,6 +26,25 @@ async function fetchData(URL) {
       `
         );
       });
+      DOMselectors.spellName.addEventListener("keyup", function (event) {
+        let searchQuery = event.target.value.toLowerCase();
+
+        console.log(searchQuery);
+
+        let allNamesDOMCollection = document.getElementsByClassName("title"); // can also use getElementByTagName('li')
+
+        for (let i = 0; i < allNamesDOMCollection.length; i++) {
+          const currentName =
+            allNamesDOMCollection[i].textContent.toLowerCase();
+
+          if (currentName.includes(searchQuery)) {
+            console.log(currentName);
+            allNamesDOMCollection[i].style.display = "block";
+          } else {
+            allNamesDOMCollection[i].style.display = "none";
+          }
+        }
+      });
     }
   } catch (error) {
     console.log(error);
@@ -39,21 +58,3 @@ async function fetchData(URL) {
 }
 
 fetchData(URL);
-DOMselectors.button.addEventListener("keyup", function (event) {
-  let searchQuery = event.target.value.toLowerCase();
-
-  console.log(searchQuery);
-
-  let allNamesDOMCollection = document.getElementsByClassName("name"); // can also use getElementByTagName('li')
-
-  for (let i = 0; i < allNamesDOMCollection.length; i++) {
-    const currentName = allNamesDOMCollection[i].textContent.toLowerCase();
-
-    if (currentName.includes(searchQuery)) {
-      console.log(currentName);
-      allNamesDOMCollection[i].style.display = "block";
-    } else {
-      allNamesDOMCollection[i].style.display = "none";
-    }
-  }
-});
