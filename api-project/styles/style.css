@@ -48,3 +48,14 @@ html, body {
     input{
       width: 50rem;
     }
+
+
+
+    @import url("https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css");
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@300;500;700&display=swap");
+
+.title{
+background-color: black;
+border: solid 1px;
+border-color: white;
+}

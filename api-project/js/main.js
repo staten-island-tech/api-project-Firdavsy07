@@ -5,7 +5,7 @@ const DOMselectors = {
   button: document.getElementById("submit"),
 };
 
-async function fetchSpellData(URL) {
+async function fetchData(URL) {
   try {
     const response = await fetch(URL);
     if (response.status < 200 || response.status > 299) {
@@ -20,23 +20,40 @@ async function fetchSpellData(URL) {
       data.results.forEach((data) => {
         document.getElementById("api-response").insertAdjacentHTML(
           "afterbegin",
-          `<div>
-            <h2>${data.name}</h2>
-            </div>`
+          ` 
+          <div class="title" id="name"><h2 class="name">${data.name}</h2>
+          <h3>${data.index}</h3></div>
+      `
         );
       });
     }
   } catch (error) {
+    console.log(error);
     document.getElementById("api-response").insertAdjacentHTML(
       "afterbegin",
       `<div>
         <h2>Sorry, I hate to inform you that your spell request was stupid</h2>
         </div>`
     );
-    console.log(error);
   }
 }
-fetchSpellData();
-DOMselectors.button.addEventListener("click", function () {
-  fetchSpellData();
+
+fetchData(URL);
+DOMselectors.button.addEventListener("keyup", function (event) {
+  let searchQuery = event.target.value.toLowerCase();
+
+  console.log(searchQuery);
+
+  let allNamesDOMCollection = document.getElementsByClassName("name"); // can also use getElementByTagName('li')
+
+  for (let i = 0; i < allNamesDOMCollection.length; i++) {
+    const currentName = allNamesDOMCollection[i].textContent.toLowerCase();
+
+    if (currentName.includes(searchQuery)) {
+      console.log(currentName);
+      allNamesDOMCollection[i].style.display = "block";
+    } else {
+      allNamesDOMCollection[i].style.display = "none";
+    }
+  }
 });
