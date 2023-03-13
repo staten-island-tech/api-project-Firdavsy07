@@ -27,7 +27,6 @@ async function fetchSpellData(URL) {
       });
     }
   } catch (error) {
-<<<<<<< HEAD
     document.getElementById("api-response").insertAdjacentHTML(
       "afterbegin",
       `<div>
@@ -40,23 +39,4 @@ async function fetchSpellData(URL) {
 fetchSpellData();
 DOMselectors.button.addEventListener("click", function () {
   fetchSpellData();
-=======
-    console.log(error);
-    console.log("common whalen L");
-  }
-}
-
-DOMselectors.button.addEventListener("click", function () {
-  console.log(DOMselectors.spellName.value);
-  if (DOMselectors.spellName.value.includes("url")) {
-    fetchSpellData(URL);
-  }
-});
-
-DOMselectors.button.addEventListener("click", function () {
-  console.log(DOMselectors.spellName.value);
-  if (DOMselectors.spellName.value.includes("names")) {
-    fetchSpellName(URL);
-  }
->>>>>>> parent of 364db45 (i hate apiiii so muchhh)
 });
