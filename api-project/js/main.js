@@ -22,7 +22,9 @@ async function fetchData(URL) {
           "afterbegin",
           ` 
           <div class="title" id="name"><h2 class="name">${data.name}</h2>
-          <h3>${data.index}</h3></div>
+          <h3>${data.index}</h3>
+          <h3>Link at https://www.dndbeyond.com/spells/${data.index}</h3></div>
+          
       `
         );
       });
@@ -31,7 +33,7 @@ async function fetchData(URL) {
 
         console.log(searchQuery);
 
-        let allNamesDOMCollection = document.getElementsByClassName("title"); // can also use getElementByTagName('li')
+        let allNamesDOMCollection = document.getElementsByClassName("title");
 
         for (let i = 0; i < allNamesDOMCollection.length; i++) {
           const currentName =
@@ -42,6 +44,15 @@ async function fetchData(URL) {
             allNamesDOMCollection[i].style.display = "block";
           } else {
             allNamesDOMCollection[i].style.display = "none";
+          }
+
+          if (allNamesDOMCollection.length === null) {
+            document.getElementById("api-response").insertAdjacentHTML(
+              "afterbegin",
+              `<div>
+                <h2>Sorry, I hate to inform you that your spell request was stupid</h2>
+                </div>`
+            );
           }
         }
       });
