@@ -45,15 +45,15 @@ async function fetchData(URL) {
           } else {
             allNamesDOMCollection[i].style.display = "none";
           }
-
-          if (allNamesDOMCollection.length === null) {
-            document.getElementById("api-response").insertAdjacentHTML(
-              "afterbegin",
-              `<div>
-                <h2>Sorry, I hate to inform you that your spell request was stupid</h2>
-                </div>`
-            );
-          }
+          console.log(allNamesDOMCollection.length);
+        }
+        if (searchQuery.length > 10) {
+          document.getElementById("api-response").insertAdjacentHTML(
+            "afterbegin",
+            `<div class="disposable">
+              <h2>Hurry up and look for a spell ididot</h2>
+              </div>`
+          );
         }
       });
     }
